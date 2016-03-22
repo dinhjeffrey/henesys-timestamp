@@ -6,10 +6,9 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
 var api = require('./app/api/timestamp.js')
-var app = express()
-var bodyParser = require('body-parser')
-
+var bodyParser = require('body-parse')
 var app = express();
+
 require('dotenv').load();
 require('./app/config/passport')(passport);
 
