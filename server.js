@@ -7,7 +7,6 @@ var passport = require('passport');
 var session = require('express-session');
 var api = require('./app/api/timestamp.js')
 var bodyParser = require('body-parse')
-var app = express();
 
 require('dotenv').load();
 require('./app/config/passport')(passport);
