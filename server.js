@@ -33,7 +33,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use('/public', express.static(process.cwd() + '/public'))
 
+// The format follows as, alias to use for real path, also allows permissions to such path
+// app.use('/api', express.static(process.cwd() + '/app/api')
+
 routes(app, passport);
+// need below to run api
+api(app)
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {
