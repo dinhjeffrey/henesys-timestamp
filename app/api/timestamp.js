@@ -5,8 +5,8 @@ module.exports = function(app) {
     app.get('/:query', function(req, res){
         var date = req.params.query
         
-        // var unix = moment("MM/D/YYYY").unix();
-        var natural = moment.unix(date).format("MM/DD/YYYY");
+        var unix = moment("'MMMM Do YYYY").unix();
+        var natural = moment.unix(date).format("MMMM D YYYY");
         var dateObj = { "unix": date, "natural": natural }
         res.send(JSON.stringify(dateObj))
     })
