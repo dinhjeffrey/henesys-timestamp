@@ -4,11 +4,27 @@ var moment = require('moment')
 module.exports = function(app) {
     app.get('/:query', function(req, res){
         var date = req.params.query
+        var natural = null
+        var unix = null
         
-        var unix = moment("'MMMM Do YYYY").unix();
-        var natural = moment.unix(date).format("MMMM D YYYY");
-        var dateObj = { "unix": date, "natural": natural }
-        res.send(JSON.stringify(dateObj))
+        if (isNaN(date[0]))
+          natural = date
+        else
+          unix = date
+        
+        if (natural === date) {
+            unix = moment("'MMMM Do YYYY").unix();
+            var dateObj = { "unix": unix, "natural": natural }
+            res.send(JSON.stringify(dateObj))
+        } else {
+            natural = moment.unix(date).format("MMMM D YYYY");
+            var dateObj = { "unix": unix, "natural": natural }
+            res.send(JSON.stringify(dateObj))
+        }
+          
+        
+        
+        
     })
 }
         
