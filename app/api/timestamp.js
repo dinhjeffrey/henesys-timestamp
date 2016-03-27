@@ -5,11 +5,12 @@ module.exports = function(app) {
     app.get('/:query', function(req, res){
         var date = req.params.query
         
-        var unix = moment("MM/D/YYYY").unix();
+        // var unix = moment("MM/D/YYYY").unix();
         var natural = moment.unix(date).format("MM/DD/YYYY");
-        var dateObj = { "unix": unix, "natural": natural }
+        var dateObj = { "unix": date, "natural": natural }
         res.send(JSON.stringify(dateObj))
-        
+    })
+}
         
 
     //     var unix = null
@@ -41,4 +42,3 @@ module.exports = function(app) {
     //     // Convert unix timestamp to natural date
     //     return moment.unix(unix).format("MMMM D, YYYY")
     // }
-}
