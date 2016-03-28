@@ -17,7 +17,7 @@ module.exports = function(app) {
             var dateObj = { "unix": unix, "natural": natural }
             res.send(JSON.stringify(dateObj))
         } else {
-            natural = moment.unix(date).format("MMMM D YYYY");
+            natural = moment.unix(date).format("MMMM D, YYYY");
             var dateObj = { "unix": unix, "natural": natural }
             res.send(JSON.stringify(dateObj))
         }
