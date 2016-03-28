@@ -13,7 +13,7 @@ module.exports = function(app) {
           unix = date
         
         if (natural === date) {
-            unix = moment("'MMMM Do YYYY").unix();
+            unix = new Date(date).getTime() / 1000;
             var dateObj = { "unix": unix, "natural": natural }
             res.send(JSON.stringify(dateObj))
         } else {
