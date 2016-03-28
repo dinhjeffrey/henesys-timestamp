@@ -11,5 +11,5 @@ https://timestamp-ms.herokuapp.com/1450137600
 
 #Example Output:
 ```json
-{ "unix": 1450137600, "natural": "December 15 2015" }
+{ "unix": 1450137600, "natural": "December 15, 2015" }
 ```
